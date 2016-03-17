@@ -27,7 +27,6 @@ gradle.properties
 gradle/
 gradlew
 gradlew.bat
-settings.gradle
 
 # Cache of project
 .gradletasknamecache
