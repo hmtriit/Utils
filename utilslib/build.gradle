@@ -52,10 +52,10 @@ dependencies {
 
 bintray {
     user = 'liconrepo'
-    key = 'b31bf5cc27cce6587650cc5f22db390aaebe9aca'
+    key = ''
     pkg {
         repo = 'maven'
-        name = 'com.licon'
+        name = 'com.licon.utils'
 
         version {
             name = '1.0.0'
