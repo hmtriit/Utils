@@ -55,11 +55,11 @@ bintray {
     key = 'b31bf5cc27cce6587650cc5f22db390aaebe9aca'
     pkg {
         repo = 'maven'
-        name = 'com.licon.utils'
+        name = 'com.licon'
 
         version {
             name = '1.0.0'
-            desc = 'This library provides the necessary static methods useful in Andorid development.'
+            desc = 'This library provides the necessary static methods useful in Android development.'
             released  = new Date()
             vcsTag = '1.0.0'
         }
