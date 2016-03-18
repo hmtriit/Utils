@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.licon.utils'
+version = '1.0.0'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath()
+            .join(File.pathSeparator))
+}
+
+task generateJavadocsJar(type: Jar) {
+    from generateJavadocs.destinationDir
+    classifier 'javadoc'
+}
+
+generateJavadocsJar.dependsOn generateJavadocs
+
+artifacts {
+    archives generateJavadocsJar
+    archives generateSourcesJar
+}
+
+dependencies {
+
+}
+
+bintray {
+    user = 'liconrepo'
+    key = 'b31bf5cc27cce6587650cc5f22db390aaebe9aca'
+    pkg {
+        repo = 'maven'
+        name = 'com.licon.utils'
+
+        version {
+            name = '1.0.0'
+            desc = 'This library provides the necessary static methods useful in Andorid development.'
+            released  = new Date()
+            vcsTag = '1.0.0'
+        }
+
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/liconrepo/Utils.git'
+        websiteUrl = 'https://github.com/liconrepo/Utils'
+    }
+    configurations = ['archives']
+}
