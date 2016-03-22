@@ -1,6 +1,7 @@
 package com.licon.utils;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -8,9 +9,12 @@ import android.content.pm.ResolveInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.os.Parcelable;
+import android.provider.Telephony;
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,7 +35,7 @@ public class AppUtils {
         context.startActivity(intent);
     }
 
-    public static void shareDataUsingIntent(String data, String url, Activity activity) {
+    public static void shareDataOnSocialSite(String data, String url, String title, Activity activity) {
         List<Intent> targetShareIntents = new ArrayList<Intent>();
 
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
@@ -62,13 +66,42 @@ public class AppUtils {
             }
 
             if(!targetShareIntents.isEmpty()) {
-                Intent chooserIntent = Intent.createChooser(targetShareIntents.remove(0),
-                        activity.getString(R.string.share_via));
+                Intent chooserIntent = Intent.createChooser(targetShareIntents.remove(0),title);
                 chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, targetShareIntents.toArray(new Parcelable[]{}));
                 chooserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 activity.startActivity(chooserIntent);
             }
         }
+    }
+
+    public static String sendEmail(Context context, String bodyShare) {
+        String errorMsg = null;
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Intent smsIntent = new Intent(Intent.ACTION_SEND);
+            smsIntent.setType(IntentData.SHARE_TYPE_PLAIN_TEXT);
+            smsIntent.putExtra(Intent.EXTRA_TEXT, bodyShare);
+
+            String smsPackage = Telephony.Sms.getDefaultSmsPackage(context);
+            if (smsPackage != null) {
+                smsIntent.setPackage(smsPackage);
+            }
+            try {
+                context.startActivity(smsIntent);
+            } catch (ActivityNotFoundException activityNotException) {
+               errorMsg = activityNotException.getMessage();
+            }
+        } else {
+            Intent viewIntent = new Intent(Intent.ACTION_VIEW);
+            viewIntent.putExtra("sms_body", bodyShare);
+            viewIntent.setType(IntentData.SHARE_TYPE_MESSAGE_VND);
+            try {
+                context.startActivity(viewIntent);
+            } catch (ActivityNotFoundException activityNotException) {
+                errorMsg = activityNotException.getMessage();
+            }
+        }
+        return errorMsg;
     }
 
     public static boolean createAppDirIfNotExists(String folder_name) throws FileNotFoundException {

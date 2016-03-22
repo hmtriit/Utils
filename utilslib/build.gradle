@@ -59,7 +59,7 @@ bintray {
 
         version {
             name = '1.0.0'
-            desc = 'This library provides the necessary static methods useful in Android development.'
+            desc = 'Utils is a collection of many functions useful in Android projects during development. Android developers are welcome to use the functions into their projects.'
             released  = new Date()
             vcsTag = '1.0.0'
         }
