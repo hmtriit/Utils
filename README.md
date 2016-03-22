@@ -1,20 +1,30 @@
 Utils is a collection of many functions useful in Android projects during development. Android developers are welcome to use the functions into their projects.
 
-* [Installation](#Installation)
-* [Contributing](#contributing)
+Installation
+------------
 
-# Installation
+Grab via Maven
+
+```
+<dependency>
+  <groupId>com.licon.utils</groupId>
+  <artifactId>utilslib</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
+Or,
 
 Add Gradle dependency:
 
 ```gradle
 dependencies {
-   compile 'com.licon.utils:utilslib:1.0.0'
+   compile 'com.licon.utils:utilslib:1.0.1'
 }
 ```
 
-# Contributing
-If you want to contribute into this project then fork it & start to add some functions that can be utilized in the Android projects.Note that all pull request should go to `develop` branch. Also, if you have some suggestion then please email me to the following address.
+Contributing
+------------
+If you want to contribute into this project then fork it & start to add some functions that can be utilized in the Android projects.Note that all pull requests should go to `develop` branch. Also, if you have some suggestion then please email me to the following address.
 
 Developer
 ---------

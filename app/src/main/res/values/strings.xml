@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Utils Sample</string>
+    <!-- dialog default data -->
+    <string name="dialog_title">Hey!</string>
+    <string name="dialog_msg">Do you wanna to see me?</string>
+    <string name="dialog_button_yes">YES</string>
+    <string name="dialog_button_no">NOPE</string>
 </resources>
