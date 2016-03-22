@@ -1,7 +1,6 @@
 Utils is a collection of many functions useful in Android projects during development. Android developers are welcome to use the functions into their projects.
 
 * [Installation](#Installation)
-* [Functions](#Functions)
 * [Contributing](#contributing)
 
 # Installation
@@ -13,14 +12,6 @@ dependencies {
    compile 'com.licon.utils:utilslib:1.0.0'
 }
 ```
-
-# Functions
-
-[ AppUtils ]
-
-* AppUtils.openBrowser(context, url) : It opens the browser with the input-url using intent.
-* AppUtils.shareDataOnSocialSite(data, url, title, activity) : It shares any data/url to facebook, twitter, linkedin & google+
-* AppUtils.createAppDirIfNotExists(folder_name) : It creates a folder inside the external storage.
 
 # Contributing
 If you want to contribute into this project then fork it & start to add some functions that can be utilized in the Android projects.Note that all pull request should go to `develop` branch. Also, if you have some suggestion then please email me to the following address.
