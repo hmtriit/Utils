@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.licon.utils'
-version = '1.0.0'
+version = '1.0.1'
 
 android {
     compileSdkVersion 23
@@ -21,6 +21,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.1.1'
 }
 
 task generateSourcesJar(type: Jar) {
@@ -46,10 +51,6 @@ artifacts {
     archives generateSourcesJar
 }
 
-dependencies {
-
-}
-
 bintray {
     user = 'liconrepo'
     key = ''
@@ -58,10 +59,10 @@ bintray {
         name = 'com.licon.utils'
 
         version {
-            name = '1.0.0'
+            name = '1.0.1'
             desc = 'Utils is a collection of many functions useful in Android projects during development. Android developers are welcome to use the functions into their projects.'
             released  = new Date()
-            vcsTag = '1.0.0'
+            vcsTag = '1.0.1'
         }
 
         licenses = ['Apache-2.0']

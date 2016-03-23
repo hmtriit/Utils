@@ -5,6 +5,7 @@ package con.licon.data;
  */
 public class IntentData {
     // Share intent constants
+    public static final String SMS_BODY = "sms_body";
     public static final String SHARE_TYPE_PLAIN_TEXT = "text/plain";
     public static final String SHARE_TYPE_MESSAGE_RFC = "message/rfc822";
     public static final String SHARE_TYPE_MESSAGE_VND = "vnd.android-dir/mms-sms";
