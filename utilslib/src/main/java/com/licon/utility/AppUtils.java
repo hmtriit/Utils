@@ -1,4 +1,4 @@
-package com.licon.utils;
+package com.licon.utility;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -23,8 +23,8 @@ import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 
-import con.licon.data.AppData;
-import con.licon.data.IntentData;
+import con.licon.utilsdata.AppData;
+import con.licon.utilsdata.IntentData;
 
 /**
  * Created by FRAMGIA\khairul.alam.licon on 18/3/16.

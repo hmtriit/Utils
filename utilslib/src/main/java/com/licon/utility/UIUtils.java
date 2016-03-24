@@ -1,4 +1,4 @@
-package com.licon.utils;
+package com.licon.utility;
 
 import android.app.Activity;
 import android.content.DialogInterface;
