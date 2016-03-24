@@ -9,7 +9,7 @@ Grab via Maven
 <dependency>
   <groupId>com.licon.utils</groupId>
   <artifactId>utilslib</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 </dependency>
 ```
 Or,
@@ -18,13 +18,9 @@ Add Gradle dependency:
 
 ```gradle
 dependencies {
-   compile 'com.licon.utils:utilslib:1.0.1'
+   compile 'com.licon.utils:utilslib:1.0.2'
 }
 ```
-
-Contributing
-------------
-If you want to contribute into this project then fork it & start to add some functions that can be utilized in the Android projects.Note that all pull requests should go to `develop` branch. Also, if you have some suggestion then please email me to the following address.
 
 Developer
 ---------
