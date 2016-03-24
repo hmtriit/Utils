@@ -1,4 +1,4 @@
-package com.licon.utils.sample;
+package com.licon.utility.sample;
 
 import android.app.Activity;
 import android.content.DialogInterface;
@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 
-import com.licon.utils.AppUtils;
-import com.licon.utils.DateTimeUtils;
-import com.licon.utils.UIUtils;
+import com.licon.utility.AppUtils;
+import com.licon.utility.DateTimeUtils;
+import com.licon.utility.UIUtils;
 
 import java.util.Date;
 

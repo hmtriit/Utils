@@ -2,8 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group = 'com.licon.utils'
-version = '1.0.2'
+group = 'com.licon.utility'
+version = '1.0.0'
 
 android {
     compileSdkVersion 23
@@ -56,13 +56,13 @@ bintray {
     key = ''
     pkg {
         repo = 'maven'
-        name = 'com.licon.utils'
+        name = 'com.licon.utility'
 
         version {
-            name = '1.0.2'
+            name = '1.0.0'
             desc = 'Utils is a collection of many functions useful in Android projects during development. Android developers are welcome to use the functions into their projects.'
             released  = new Date()
-            vcsTag = '1.0.2'
+            vcsTag = '1.0.0'
         }
 
         licenses = ['Apache-2.0']

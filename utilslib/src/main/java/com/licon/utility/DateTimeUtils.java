@@ -1,4 +1,4 @@
-package com.licon.utils;
+package com.licon.utility;
 
 /**
  * Created by FRAMGIA\khairul.alam.licon on 26/2/16.
@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import con.licon.data.AppData;
+import con.licon.utilsdata.AppData;
 
 public class DateTimeUtils {
 

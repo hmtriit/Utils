@@ -1,4 +1,4 @@
-package con.licon.data;
+package con.licon.utilsdata;
 
 /**
  * Created by FRAMGIA\khairul.alam.licon on 18/3/16.
