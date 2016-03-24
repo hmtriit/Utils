@@ -7,9 +7,10 @@ Grab via Maven
 
 ```
 <dependency>
-  <groupId>com.licon.utils</groupId>
+  <groupId>com.licon.utility</groupId>
   <artifactId>utilslib</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.0</version>
+  <type>pom</type>
 </dependency>
 ```
 Or,
@@ -18,7 +19,7 @@ Add Gradle dependency:
 
 ```gradle
 dependencies {
-   compile 'com.licon.utils:utilslib:1.0.2'
+   compile 'com.licon.utility:utilslib:1.0.0'
 }
 ```
 
